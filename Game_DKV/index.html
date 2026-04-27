@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Judul yang tampil di tab browser -->
+    <title>Mini Games MPP DKV</title>
+
+    <!-- Supaya responsive di HP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import font dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================
+           RESET DASAR CSS
+           Menghilangkan margin & padding bawaan browser
+        ==========================*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* =========================
+           BACKGROUND UTAMA
+           Gradient pink aesthetic
+        ==========================*/
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================
+           HEADER
+        ==========================*/
+        header {
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+        /* Warna teks span di header */
+        header span {
+            color: #ff2e93;
+        }
+
+        /* =========================
+           HERO SECTION (Bagian Tengah)
+        ==========================*/
+        .hero {
+            flex: 1; /* Supaya memenuhi tinggi layar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Container tombol */
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Style dasar tombol */
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        /* Tombol utama (pink solid) */
+        .btn-primary {
+            background: #ff2e93;
+            color: #fff;
+        }
+
+        /* Efek hover */
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff2e93;
+        }
+
+        /* Tombol kedua (putih) */
+        .btn-secondary {
+            background: #fff;
+            color: #ff2e93;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            background: #ffe6f2;
+        }
+
+        /* =========================
+           SECTION GAME CARD
+        ==========================*/
+        .games-section {
+            background: #fff;
+            color: #333;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .games-section h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #ff2e93;
+        }
+
+        /* Grid responsive */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card game */
+        .card {
+            background: #fff0f6;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s ease;
+        }
+
+        /* Efek hover card */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 46, 147, 0.3);
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #ff2e93;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ==========================*/
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff2e93;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TOMBOL KONTROL MUSIK
+        ==========================*/
+        .music-control {
+            position: fixed; /* Posisi tetap */
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: #ff2e93;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Responsive HP */
+        @media(max-width:768px){
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     AUDIO BACKGROUND MUSIC
+     autoplay = otomatis play
+     loop = diputar terus
+========================= -->
+<audio id="bgMusic" autoplay loop>
+    <source src="bgm.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <h1>Mini <span>Games</span></h1>
+</header>
+
+<section class="hero">
+    <h2>Play Fun Girly Mini Games 🎀</h2>
+    <p>Enjoy cute and fun mini games. Challenge your brain in Tic Tac Toe or test your reflex in Snake Game!</p>
+
+    <div class="buttons">
+        <!-- Link menuju game -->
+        <a href="../Game_DKV/XOX/index.html" class="btn btn-primary">Play Tic Tac Toe</a>
+        <a href="../Game_DKV/pacman/index.html" class="btn btn-secondary">Play Snake Game</a>
+    </div>
+</section>
+
+<section class="games-section">
+    <h3>Choose Your Game</h3>
+
+    <div class="cards">
+        <div class="card">
+            <h4>🎲 Tic Tac Toe</h4>
+            <p>Classic strategy game with cute vibes!</p>
+            <a href="../Game_DKV/XOX/index.html">Play Now</a>
+        </div>
+
+        <div class="card">
+            <h4>🐍 Snake Game</h4>
+            <p>Control the snake and reach high score!</p>
+            <a href="../Game_DKV/pacman/index.html">Play Now</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Mini Games by @nurhayatulfadila 💖
+</footer>
+
+<!-- Tombol untuk play/pause musik -->
+<button class="music-control" onclick="toggleMusic()">🎵 Music</button>
+
+<script>
+    // Mengambil elemen audio berdasarkan ID
+    const music = document.getElementById("bgMusic");
+
+    // Fungsi untuk toggle musik
+    function toggleMusic() {
+
+        // Jika musik sedang pause → play
+        if (music.paused) {
+            music.play();
+        } 
+        // Jika musik sedang play → pause
+        else {
+            music.pause();
+        }
+    }
+</script>
+
+</body>
+</html>
