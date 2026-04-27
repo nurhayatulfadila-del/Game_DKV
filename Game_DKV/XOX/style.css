@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f78a95, #b5696f);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* LANDING */
+.landing {
+    margin-top: 120px;
+}
+
+.landing h1 {
+    color: white;
+}
+
+.landing input {
+    padding: 10px;
+    font-size: 16px;
+    width: 220px;
+    margin: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.landing button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+/* GAME */
+.game {
+    margin-top: 40px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.reset {
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(181, 131, 139, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+/* popup disembunyikan */
+.popup.hidden {
+    display: none;
+}
+
+/* popup ditampilkan */
+.popup:not(.hidden) {
+    display: flex;
+}
+
+.popup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}

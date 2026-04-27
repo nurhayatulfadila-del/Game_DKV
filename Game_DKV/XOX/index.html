@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Game XOX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LANDING PAGE ================= -->
+<div class="landing" id="landing">
+    <h1>🎮 Game XOX 🎮</h1>
+    <input type="text" id="playerName" placeholder="Masukkan Nama Kamu">
+    <button onclick="startGame()">Mulai Game</button>
+</div>
+
+<!-- ================= AREA GAME ================= -->
+<div class="game hidden" id="game">
+    <h2 id="turnInfo">Giliran Kamu</h2>
+    <div class="board" id="board"></div>
+    <button class="reset" onclick="resetGame()">Main Ulang</button>
+</div>
+
+<!-- ================= POPUP MENANG ================= -->
+<div class="popup hidden" id="popup">
+    <div class="popup-box">
+        <h2>🎮 Hasil Game 🎮</h2>
+        <p id="winnerText"></p>
+        <p id="resultText"></p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<!-- ================= AUDIO ================= -->
+<audio id="bgm" src="audio/bgm.wav" loop></audio>
+<audio id="clickSound" src="audio/click.wav"></audio>
+<audio id="winSound" src="audio/win.wav"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
